@@ -23,6 +23,6 @@
         
     </head>
     <body ng-controller="myCtrl">
-        <select ng-options="country for country in countries"></select>
+        <select ng-options="country.countries.name for country in countries"></select>
     </body>
 </html>
