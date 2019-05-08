@@ -15,7 +15,7 @@
                     $scope.states=response.data;
                 })
                 
-                $http.get('cities').then(function(response){
+                $http.get('cities.json').then(function(response){
                     $scope.cities=response.data;
                 })
             })
