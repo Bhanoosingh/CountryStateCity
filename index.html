@@ -1,0 +1,28 @@
+<html ng-app="myApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script>
+            var myApp=angular.module("myApp",[]);
+            
+            myApp.controller("myCtrl",function($http,$scope){
+                console.log('hello');
+                
+                $http.get('countries.json').then(function(response){
+                    $scope.countries=response.data;
+                })
+                
+                $http.get('states.json').then(function(response){
+                    $scope.states=response.data;
+                })
+                
+                $http.get('cities').then(function(response){
+                    $scope.cities=response.data;
+                })
+            })
+        </script>
+        
+    </head>
+    <body ng-controller="myCtrl">
+        <select ng-options="country for country in countries"></select>
+    </body>
+</html>
